@@ -5,7 +5,7 @@ Java中的编译分为两个部分：
 1. 前端编译：源码文件（.java）编译成字节码文件（.class）
 2. 后端编译：字节码文件被虚拟机加载以后编译成机器码
 流程如图：<br>
-![java编译流程图](E:\github\ddup\img\v2-e33e459db6a3f63ac0975a2f5f813cfd_r.jpg)
+![java编译流程图](md\img\v2-e33e459db6a3f63ac0975a2f5f813cfd_r.jpg)
 ## 1.1 词法分析
 将源码的字符流解析成符合规范的Token流，规范化的Token可以分成以下三种类型：
 1. java关键字：public、static、final、String、int等；
@@ -21,7 +21,7 @@ public class Cifa {
 }
 ```
 以上代码转换为Tokne流如下：<br>
-![Token流](E:\github\ddup\img\990532-20161001122058500-93135086.png)
+![Token流](md\img\990532-20161001122058500-93135086.png)
 ## 1.2 语法分析
 根据Token集合生成抽象语法树，语法树是一种表示程序语法结构的表现形式，语法树的每一个节点都代表着程序代码中的一个语法结构，例如包、类型、修饰符。<br>
 例子：
@@ -37,13 +37,13 @@ public class TestClass {
 }
 ```
 上面这段代码对应的抽象语法树如图：<br>
-![抽象语法树](E:\github\ddup\img\11238893-fdca37e67c4c028d.png)
+![抽象语法树](md\img\11238893-fdca37e67c4c028d.png)
 
 # 二、CodeQL中的AST
 在CodeQL中，我们可以右击java文件，查看对应的AST，[]中的表示这部分语法结构在QL数据库中的类型，点击AST中的类型会跳转到源文件中对应的代码。
 
-<img src="E:\github\ddup\img\RTODEC{K16LRS5WB]][RH1W.png" width = "300" alt="img1" />
-<img src="E:\github\ddup\img\img2.png" width = "300" alt="img2" />
+<img src="md\img\RTODEC{K16LRS5WB]][RH1W.png" width = "300" alt="img1" />
+<img src="md\img\img2.png" width = "300" alt="img2" />
 
 参考链接：
 1. [抽象语法树AST的全面解析（一）](https://www.jianshu.com/p/ff8ec920f5b9)

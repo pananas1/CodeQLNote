@@ -5,7 +5,7 @@ Java中的编译分为两个部分：
 1. 前端编译：源码文件（.java）编译成字节码文件（.class）
 2. 后端编译：字节码文件被虚拟机加载以后编译成机器码
 流程如图：<br>
-![java编译流程图](/main/img/v2-e33e459db6a3f63ac0975a2f5f813cfd_r.jpg)
+![java编译流程图](/img/v2-e33e459db6a3f63ac0975a2f5f813cfd_r.jpg)
 ## 1.1 词法分析
 将源码的字符流解析成符合规范的Token流，规范化的Token可以分成以下三种类型：
 1. java关键字：public、static、final、String、int等；

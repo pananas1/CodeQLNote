@@ -1,8 +1,17 @@
-Coedql个人学习总结
+CoedQL个人学习总结
 
-由于学习的目的仅仅是为了CodeQL工具的使用，所以很多知识点都没有深入研究，本着够用就行的原则，总结了一小部分出现频率比较高的知识点，适合CodeQL入门。
+适合CodeQL入门
 
 阅读指南：<br>
-1.00开头的文件不看也行，建议在入门了CodeQL之后再回过来学习。主要是讲一些理论性的东西，比如编译原理、数据流分析、污点跟踪的介绍。这部分属实是搞不明白，持续更新中......<br>
-2.01-03主要讲一些QL本身的语法，简单了解即可，无需深究，后续实操的时候慢慢的就可以理解。就好比Java里的面向对象、基本语法等知识，属于是写的多了就熟练了。<br>
-3.每个知识点都贴了官方文档对应的章节，看不懂或者想学习更多建议直接查阅官方文档。<br>
+0.[00CodeQL_程序分析](md/00CodeQL_程序分析.md) <br>
+一些乱七八糟的关于程序分析的知识。<br>
+1.[01CodeQL_环境搭建](md/01CodeQL_环境搭建.md)<br>
+使用VScode搭建codeql环境。<br>
+2.[CodeQL_一个简单查询例子](md/02CodeQL_一个简单查询例子.md)<br>
+介绍QL语句的结构，from...where...select。<br>
+3.[CodeQL_QL语言语法](md/03CodeQL_QL语言语法.md)<br>
+介绍QL的语法，谓词的概念、类型的概念、表达式的概念。<br>
+4.[CodeQL_与Java相关的类库](md/04CodeQL_与Java相关的类库.md)<br>
+解释QL语言中与Java相关的类库。
+5.[05CodeQL_Call和Callable类](md/05CodeQL_Call和Callable类.md)<br>
+介绍Call和Callable类这两个类及它们的谓词。

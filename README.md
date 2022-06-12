@@ -15,3 +15,6 @@ CoedQL个人学习总结
 解释QL语言中与Java相关的类库。<br>
 5.[CodeQL_Call和Callable类](md/05CodeQL_Call和Callable类.md)<br>
 介绍Call和Callable类这两个类及它们的谓词。<br>
+
+
+[Java的CodeQL查询帮助](https://codeql.github.com/codeql-query-help/java/)

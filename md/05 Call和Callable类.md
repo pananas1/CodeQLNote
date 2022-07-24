@@ -1,6 +1,6 @@
 CodeQL可以识别调用其它代码的代码以及可以被其它地方调用的代码，这个能力由Callable和Call这两个抽象类实现，文本主要介绍这两个类即它们的谓词。
 # Call类
-`Call`类是`MethodAccess`类、`ClassInstanceExpression`类、`ThisConstructorInvocationStmt`类、`SuperConstructorInvocationStmt`类的父类。<br>
+`Call`类是`MethodAccess`类、`ClassInstanceExpression`类、`ThisConstructorInvocationStmt`类、`SuperConstructorInvocationStmt`类的父类。
 >a Call is something that invokes a Callable.
 
 `Call`类表示对可调用对象的调用，包括对方法的调用，对构造函数和超级构造函数的调用以及通过类实例化调用的构造函数。例如如下的Java代码结构：
@@ -25,7 +25,7 @@ SpringTemplateEngine engine = new SpringTemplateEngine();
 `getCallee()`返回此调用的可调用对象。
 ### getCaller()
 `getCaller()`返回调用此调用的可调用对象。
-例如如下Java代码：<br>
+例如如下Java代码：
 ```java
 public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
     if(request.getHeader("x-requested-with") != null) {
@@ -35,8 +35,8 @@ public void commence(HttpServletRequest request, HttpServletResponse response, A
     }
 }
 ```
-`request.getHeader("x-requested-with")`是一个调用（Call）<br>
-`getHeader`是一个可调用的方法（Callee）<br>
+`request.getHeader("x-requested-with")`是一个调用（Call）
+`getHeader`是一个可调用的方法（Callee）
 `commence`也是一个可调用的方法（Callee），同时它也是`getHeader`的Caller。
 
 # Callable类

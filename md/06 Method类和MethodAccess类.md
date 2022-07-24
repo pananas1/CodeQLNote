@@ -54,7 +54,7 @@ RefType getDeclaringType() {}
 1. 只有一个参数；
 2. 它的主体只包含一条语句，将方法参数的值赋给与方法相同类型声明的字段。 
 #### 4.FinalizeMethod
-不太懂<br>
+不太懂
 >A finalizer method, with name `finalize`,return type `void` and no parameters.
 
 # MethodAccess类
@@ -73,15 +73,15 @@ override Expr getQualifier() {}
 ```java
 request.getHeader("x-requested-with")
 ```
-`request.getHeader("x-requested-with")`表示一个方法调用`MethodAccess`；<br>
+`request.getHeader("x-requested-with")`表示一个方法调用`MethodAccess`；
 MethodAccess.getQualifier()返回的是`request`这个表达式。
 #### 2.Holds if this method access has a qualifier.
-不太理解什么是qualifier。<br>
+不太理解什么是qualifier。
 ```java
 predicate hasQualifier() {}
 ```
-总之：<br>
-`request.getHeader("x-requested-with")`这样的表示有qualifier。<br>
+总之：
+`request.getHeader("x-requested-with")`这样的表示有qualifier。
 `getHeader("x-requested-with")`这样的表示没有qualifier。
 #### 3.获取调用方法时传入的参数
 返回的是一个表达式。
@@ -123,7 +123,7 @@ override Stmt getEnclosingStmt() {}
 ```java
 RefType getReceiverType() {}
 ```
-比如：<br>
+比如：
 ```java
 request.getHeader("x-requested-with") 
 ```

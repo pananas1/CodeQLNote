@@ -23,7 +23,7 @@ where v.getType() instanceof PrimitiveType and v.fromSource()
 select v
 ```
 
-2）`RefType`类表示引用类型，该类又有如下几个子类：<br>
+2）`RefType`类表示引用类型，该类又有如下几个子类：
 1. `Class`，表示Java中的类；
 2. `Interface`，表示Java中的接口；
 3. `EnumType`，表示Java中的枚举类；
@@ -41,7 +41,7 @@ select v
 ### 3. 方法（Method）
 
 ## 二、抽象语法树(AST)
-此类别中的类表示抽象语法树的节点，即语句（Stmt）和表达式（Expr）。<br>
+此类别中的类表示抽象语法树的节点，即语句（Stmt）和表达式（Expr）。
 [语句与表达式的区别](https://blog.csdn.net/super_hong/article/details/84667784)：语句是可以单独执行的、能够产生实际效果的代码；而表达式则是包含在语句中，根据某种条件计算出一个值或得出某种结果，然后由语句去判断和处理的代码。
 
 ### 1.语句
@@ -92,13 +92,13 @@ public class Test {
 ```
 除了`VarAccess`类之外，还有`ThisAccess`、`SuperAccess`、`ArrayAccess`、`MethodAccess`、`TypeAccess`、`WildcardTypeAccess`和`FieldAccess`。
 #### 其它
-`CastExpr`类，表示强转表达式；<br>
-`InstanceOfExpr`类，表示instanceof表达式；<br>
-`ConditionalExpr`类，三目表达式；<br>
-`TypeLiteral`类，类型字面常量，比如String.class这样的代码；<br>
-`ClassInstanceExpr`类，类的实例化表达式；<br>
-`ArrayCreationExpr`类，创建数据的表达式；<br>
-`ArrayInit`类，数组初始化；<br>
+`CastExpr`类，表示强转表达式；
+`InstanceOfExpr`类，表示instanceof表达式；
+`ConditionalExpr`类，三目表达式；
+`TypeLiteral`类，类型字面常量，比如String.class这样的代码；
+`ClassInstanceExpr`类，类的实例化表达式；
+`ArrayCreationExpr`类，创建数据的表达式；
+`ArrayInit`类，数组初始化；
 `Annotation`类，注解。
 
 所有的语句和表达式相关的类可以查阅官方文档中的表格[抽象语法树相关的类](https://codeql.github.com/docs/codeql-language-guides/abstract-syntax-tree-classes-for-working-with-java-programs/)。
@@ -109,7 +109,7 @@ Expr和Stmt都提供了成员谓词，用于探索程序的抽象语法树，例
 3. `Expr.getParen`和`Stmt.getParent`，返回AST节点的父节点。
 
 ## 三、元数据
-`Annotation`类表示注解，`Javadoc`类表示注释。<br>
+`Annotation`类表示注解，`Javadoc`类表示注释。
 例如通过注解查询废弃的构造函数：
 ```sql
 import java
@@ -132,9 +132,9 @@ where m = c.getCallee() and
     m.hasName("println")
 select c
 ```
-`Callable`表示可调用对象，一个方法或者一个构造函数。<br>
-`Call`类表示对可调用对象的调用。<br>
-`Method`是`Callable`的子类。<br>
+`Callable`表示可调用对象，一个方法或者一个构造函数。
+`Call`类表示对可调用对象的调用。
+`Method`是`Callable`的子类。
 相反，谓词`Callable.getAReference`返回一个引用它的调用，比如我们想找`getName()`方法在哪些地方被调用了，可以使用如下查询语句：
 ```sql
 import java

@@ -16,10 +16,11 @@ CodeQL 的整体思路是把源代码转化成一个可查询的数据库，通�
 4. 配置codeql二进制文件的环境变量，方便后续命令的使用（可选）
 # 三、VSCode工作区配置
 ## 1.创建CodeQL database
-在代码根目录下执行：<br>
+在代码根目录下执行：
 `codeql database create [database-name] -l java`
-如果报错，使用完整命令：<br>
+如果报错，使用完整命令：
 `codeql database create [生成的数据库的路径] --language=java  --command="mvn clean install --file pom.xml -Dmaven.test.skip=true" --source-root=[源码路径]`
+
 ## 2.创建QL包
 本地新建一个文件夹，用于存放QL脚本，在文件夹下创建文件`qlpack.yml`，内容为：
 ```yml
@@ -32,7 +33,7 @@ libraryPathDependencies: codeql-java
 
 # 四、其它命令
 ## 编译生成database
-`codeql database create [生成的数据库的路径] --language=java  --command="mvn clean install --file pom.xml -Dmaven.test.skip=true" --source-root=[源码路径]`<br>
+`codeql database create [生成的数据库的路径] --language=java  --command="mvn clean install --file pom.xml -Dmaven.test.skip=true" --source-root=[源码路径]`
 其中--command参数可选
 ## 批量执行ql文件，并输出报告
 `codeql database analyze /CodeQL/databases/micro-service-seclab /CodeQL/ql/java/ql/examples/demo --format=csv --output=/CodeQL/Result/micro-service-seclab.csv --rerun`

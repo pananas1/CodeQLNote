@@ -34,8 +34,9 @@ select m.getName()
 QL是一种静态类型语言，每个变量都必须有一个声明的类型，类似Java中的类型。
 QL中的类型有`基本类型`、`类`、 `字符类型`、`类域类型`、 `代数数据类型`、`类型联合`和`数据库类型`。这里只对基本类型和类类型做介绍。
 ## 基本类型
-不常用，不多介绍<br>
+不常用，不多介绍
 `boolean`、`float`、`int`、`string`、`date`
+
 ## 类
 ### 1.类的定义
 QL中的类与Java中的类不同，它不能用于创建对象，仅仅表示一个逻辑属性。一个类的定义如下：
@@ -55,12 +56,13 @@ class OneTwoThree extends int {
 }
 ```
 1. 类定义格式：`class [ClassName] extends [Class]{}`
-   <br>其中类名首字母需要大写，并且必须继承一个已知的类型；
+   其中类名首字母需要大写，并且必须继承一个已知的类型；
 2. 特征谓词：`[ClassName]() {}`
-   <br>谓词名称要与类名相同，方法体中使用this变量限制类中可能值的逻辑属性，上面的例子中表示OneTwoThree类型的值范围为1、2、3。可以理解成Java中的构造方法；
+   谓词名称要与类名相同，方法体中使用this变量限制类中可能值的逻辑属性，上面的例子中表示OneTwoThree类型的值范围为1、2、3。可以理解成Java中的构造方法；
 3. 例子中的`getAString()`、`predicate isEven()`分别表示有返回值的成员谓词和无返回值的成员谓词。可以理解成Java中的类成员方法。对谓词的调用也类似与Java中对类方法的调用，例如通过`(OneTwoThree).getAString()`调用`getAString()`，返回1、2、3的字符串。
 ### 2.抽象类
-QL中可以使用`abstract`定义抽象类，下面通过举一个简单的应用场景来理解。<br>
+QL中可以使用`abstract`定义抽象类，下面通过举一个简单的应用场景来理解。
+
 例如在编写SQL注入的查询语句时，不同数据库的sink点是不一样的，当需求不断增加时，势必修改原先的查询语句，并且多种类型的数据库写在一个查询语句中，也不易维护。抽象类用于解决此类问题，实际上在CodeQL内置的查询规则中，有大量的地方使用了抽象类。
 
 我们定义一个抽象类`QueryInjectionSink`，用于表示SQL注入的sink点，类体中为空。
@@ -81,8 +83,10 @@ class OracleInjectionSink extends QueryInjectionSink {
 ```
 此时`QueryInjectionSink`类型中就包含了`MysqlInjectionSink`类型和`OracleInjectionSink`类型，可见QL语言的抽象类与Java中的抽象类不同，QL中的父类（抽象类）为其子类的并集。
 ### 3.继承
-QL中子类可以重写父类的谓词，但与Java中的方法重写有很大的区别。建议通过官方文档[覆盖成员谓词](https://codeql.github.com/docs/ql-language-reference/types/)中的例子理解。<br>
+QL中子类可以重写父类的谓词，但与Java中的方法重写有很大的区别。建议通过官方文档[覆盖成员谓词](https://codeql.github.com/docs/ql-language-reference/types/)中的例子理解。
+
 另外QL中的类支持多重继承，如果A继承自B、C，则A的值范围为A、B、C类值范围的交集。
+
 ### 4.类型强转
 QL中的类型支持强转，例子如下：
 ```java
